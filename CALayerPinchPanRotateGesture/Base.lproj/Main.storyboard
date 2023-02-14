@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CALayerPinchPanRotateGesture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aa7-Hu-YUc">
+                                <rect key="frame" x="0.0" y="47" width="375" height="731"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0Xn-Cw-odO" appends="YES" id="EME-10-aax"/>
+                                    <outletCollection property="gestureRecognizers" destination="8N5-DY-ydt" appends="YES" id="rcb-ck-Jha"/>
+                                    <outletCollection property="gestureRecognizers" destination="yKM-CB-yfJ" appends="YES" id="icn-vQ-gvp"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aa7-Hu-YUc" secondAttribute="bottom" id="hXZ-9G-s3Z"/>
+                            <constraint firstItem="aa7-Hu-YUc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qGg-5d-4vw"/>
+                            <constraint firstItem="aa7-Hu-YUc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="y8m-gj-cxE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aa7-Hu-YUc" secondAttribute="trailing" id="yRR-VI-1yb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gestureView" destination="aa7-Hu-YUc" id="wwS-W0-lkP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="0Xn-Cw-odO">
+                    <connections>
+                        <action selector="pinchGesture:" destination="BYZ-38-t0r" id="IX0-rC-UuY"/>
+                        <outlet property="delegate" destination="aa7-Hu-YUc" id="e2N-bx-agE"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="8N5-DY-ydt">
+                    <connections>
+                        <action selector="rotationGesture:" destination="BYZ-38-t0r" id="wf2-cE-MdK"/>
+                        <outlet property="delegate" destination="aa7-Hu-YUc" id="TZ5-TL-Kzd"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="yKM-CB-yfJ">
+                    <connections>
+                        <action selector="panGesture:" destination="BYZ-38-t0r" id="RN1-E6-BRo"/>
+                        <outlet property="delegate" destination="aa7-Hu-YUc" id="cqX-ja-rOD"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="101.59999999999999" y="3.6945812807881775"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
